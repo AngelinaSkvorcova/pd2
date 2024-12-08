@@ -1,0 +1,38 @@
+# 3 uzd.
+def print_isosceles_triangle(height):
+    for i in range(height):
+
+        print(' ' * (height - i - 1) + '*' * (2 * i + 1))
+
+
+try:
+    height = int(input("ievadit figura augstums: "))
+    if height <= 0:
+        print("Высота должна быть положительным числом.")
+    else:
+        print_isosceles_triangle(height)
+except ValueError:
+    print("введите корректное целое число.")
+
+# 2.uzd
+
+
+def print_square(size):
+    for i in range(size):
+        print('*' * size)
+
+
+height = 5
+print_square(height)
+
+# uzd 1.
+
+def print_rectangle(width, height):
+    for i in range(height):
+        print('*' * width)
+
+
+width = 6  
+height = 4  
+
+print_rectangle(width, height)
