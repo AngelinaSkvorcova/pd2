@@ -1,0 +1,60 @@
+import random
+
+def roll_dice(n):
+    max_sum = 0  
+
+    for i in range(n):
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+
+
+        current_sum = die1 + die2
+        max_value = max(die1, die2)
+
+
+        print(f"Бросок {i + 1}: Кубик 1 = {die1}, Кубик 2 = {die2}, "
+              f"Большее значение = {max_value}, Сумма = {current_sum}")
+        
+        
+        if current_sum > max_sum:
+            max_sum = current_sum
+
+    print(f"\nНаибольшая сумма за один ход: {max_sum}")
+
+
+try:
+    n = int(input("Введите количество бросков кубиков: "))
+    if n <= 0:
+        print("Количество бросков должно быть положительным числом.")
+    else:
+        roll_dice(n)
+except ValueError:
+    print("Пожалуйста, введите корректное целое число.")
+    
+#2. uzdevums
+import random
+
+
+def guess_the_number():
+    
+    lower_bound = 1
+    upper_bound = 100
+    number_to_guess = random.randint(lower_bound, upper_bound)
+    
+    print(f"Компьютер загадал число от {lower_bound} до {upper_bound}. Попробуйте угадать!")
+
+    attempts = 0
+
+    while True:
+        user_guess = int(input("Введите ваше предположение: "))
+        attempts += 1
+        
+        if user_guess < number_to_guess:
+            print("vairak!")
+        elif user_guess > number_to_guess:
+            print("mazak!")
+        else:
+            print(f"Pareizi! Загаданное число: {number_to_guess}")
+            break
+
+    print(f"Metienus skaits: {attempts}")
